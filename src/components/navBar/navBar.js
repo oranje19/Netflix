@@ -3,11 +3,11 @@ import "./navBar.css";
 
 function NavBar() {
     return (
-        <div className="navBar">
+        <div className="navBar navBar__black">
             <div className="navBar__contents">
                 <img 
                     className="navBar__logo"
-                    src="https://assets.brand.microsites.netflix.io/assets/493f5bba-81a4-11e9-bf79-066b49664af6_cm_1440w.png?v=49" 
+                    src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" 
                     alt="Netflix" 
                 />
 
@@ -17,7 +17,7 @@ function NavBar() {
                     alt=""
                 />
             </div>
-            <h1>This is the navBar</h1>
+            {/* <h1>This is the navBar</h1> */}
         </div>
     )
 }
