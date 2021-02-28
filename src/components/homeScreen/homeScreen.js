@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from '../banner/banner';
 import NavBar from '../navBar/navBar';
 import './homeScreen.css';
 
@@ -7,20 +8,7 @@ function HomeScreen() {
         <div className="homeScreen">
             <NavBar />
 
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-            <h1>TEST</h1>
-
-            {/* Banner */}
+            <Banner />
 
             {/* Row */}
         </div>

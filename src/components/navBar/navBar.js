@@ -18,7 +18,7 @@ function NavBar() {
     }, [])
 
     return (
-        <div className="navBar navBar__black">
+        <div className={`navBar ${show && "navBar__black"}`}>
             <div className="navBar__contents">
                 <img 
                     className="navBar__logo"
