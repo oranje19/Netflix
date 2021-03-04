@@ -1,7 +1,7 @@
 import API_KEY from './config/api_key';
 
 const requests = {
-    fetchTrending: `/trending/all/wekk?api_key=${API_KEY}&language=en-US`,
+    fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
     fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
     fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
     fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
