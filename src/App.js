@@ -7,6 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import LoginScreen from './components/login/loginScreen';
+import MovieDetail from './components/detail/movieDetail';
 
 function App() {
   const user = null;
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        {!user ? (
+        {/* {!user ? (
           <LoginScreen />
         ) : (
           <Switch>
@@ -22,7 +23,15 @@ function App() {
               <HomeScreen />
             </Route>
           </Switch>
-        )}
+        )} */}
+        <Switch>
+          <Route exact path="/">
+            <HomeScreen />
+          </Route>
+          <Route path="/movie/:id">
+            <MovieDetail />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
