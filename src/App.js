@@ -24,11 +24,16 @@ function App() {
             </Route>
           </Switch>
         )} */}
+        {/* <Switch>
+          <Route exact path="/">
+            <HomeScreen />
+          </Route>
+        </Switch> */}
         <Switch>
           <Route exact path="/">
             <HomeScreen />
           </Route>
-          <Route path="/movie/:id">
+          <Route path="/movie/:id" component={MovieDetail}>
             <MovieDetail />
           </Route>
         </Switch>
