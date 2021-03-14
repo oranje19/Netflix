@@ -5,14 +5,59 @@ import { Link } from 'react-router-dom';
 import { fetchMovie, fetchTv } from '../../requests';
 import Grow from '@material-ui/core/Grow';
 import ModalVideo from "react-modal-video";
-import { Button } from '@material-ui/core';
+import { Button, ButtonBase, Card, CardActionArea, CardMedia } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { PlayArrowRounded } from '@material-ui/icons';
 import './modalVideo.css';
 import Trailer from './trailer';
+
 // import YouTube from 'react-youtube';
 // import movieTrailer from 'movie-trailer';
 
+const useStyles = makeStyles((theme) => ({
+    row: {
+        color: "white",
+        marginLeft: "20px"
+    },
+
+    row__posters: {
+        display: "flex",
+        overflowY: "hidden",
+        overflowX: "scroll",
+        padding: "20px",
+        "&::-webkit-scrollbar": {
+            display: "none"
+        }
+    },
+
+    row__poster: {
+        maxHeight: "100px",
+        objectFit: "contain",
+        marginRight: "10px",
+        width: "100%",
+        transition: "transform 450ms",
+        "&:hover": {
+            transform: "scale(1.08)",
+            opacity: "1"
+        }
+    },
+
+    row__posterLarge: {
+        maxHeight: "250px",
+        "&:hover": {
+            transform: "scale(1.09)",
+            opacity: "1"
+        }
+    }
+
+    
+}))
+
 function Row({ title, fetchUrl, mediaType, isLargeRow = false }) {
+    const classes = useStyles();
+    console.log(classes);
+    // console.log(addTheme.palette.primary)
+
     const [movies, setMovies] = useState([]);
     // const [trailerUrl, setTrailerUrl] = useState("")
     const [movieType, setMovieType] = useState([])
@@ -61,51 +106,73 @@ function Row({ title, fetchUrl, mediaType, isLargeRow = false }) {
         fetchData();
     }, [fetchUrl])
 
-    useEffect(() => {
-        if (mediaType === 'movie') {
-            getMovieInfo(movieId)
-        }
+    // useEffect(() => {
+    //     if (mediaType === 'movie') {
+    //         getMovieInfo(movieId)
+    //     }
         
-        if (mediaType === 'tv') {
-            getTvInfo(movieId)
-        }
+    //     if (mediaType === 'tv') {
+    //         getTvInfo(movieId)
+    //     }
 
-        if (mediaType === 'all') {
-            if (movieType === 'movie') {
-                getMovieInfo(movieId)
-            }
+    //     if (mediaType === 'all') {
+    //         if (movieType === 'movie') {
+    //             getMovieInfo(movieId)
+    //         }
 
-            if (movieType === 'tv') {
-                getTvInfo(movieId)
-            }
-        }
+    //         if (movieType === 'tv') {
+    //             getTvInfo(movieId)
+    //         }
+    //     }
 
         
-    },[movieId])
+    // },[movieId])
 
 
 
-    const handleClick = (movie) => {
-        console.log("THIS IS THE MOVIEEEEEE",movie)
-        // console.log(e.target.value)
-        setMovieType(movie.media_type)
-        setMovieId(movie.id)
+    // const handleClick = (movie) => {
+    //     console.log("THIS IS THE MOVIEEEEEE",movie)
+    //     // console.log(e.target.value)
+    //     setMovieType(movie.media_type)
+    //     setMovieId(movie.id)
 
-        setPlaying(true)
+    //     // setPlaying(true)
 
-    }
+    // }
 
     return (
-        <div className="row">
+        <div className={classes.row}>
             <h2>{title}</h2>
 
             <div className="row__posters">
                 {movies.map(movie => (
                     ((isLargeRow && movie.poster_path) ||
                     (!isLargeRow && movie.backdrop_path)) && (
-                        <a onClick={() => handleClick(movie)}>
-                            <Trailer movie={movie} videoId={videoId} isLargeRow={isLargeRow} />
-                        </a>
+                        
+                        // <p onClick={() => handleClick(movie)}>
+                        //     <Trailer movie={movie} videoId={videoId} isLargeRow={isLargeRow} />
+                        // </p>
+                        
+                        // <>
+                        //     <Trailer movie={movie} videoId={videoId} isLargeRow={isLargeRow} />
+                        // </>
+                        
+                        <Trailer movie={movie} mediaType={mediaType} isLargeRow={isLargeRow} />
+
+                        // <ButtonBase className={classes.row__poster} onClick={() => handleClick(movie)}>
+                        //     <Trailer movie={movie} videoId={videoId} isLargeRow={isLargeRow} />
+                        // </ButtonBase>
+
+                        // <Card>
+                        //     <CardActionArea>
+                        //         <CardMedia
+                        //             height="140"
+                        //         >
+                        //             <Trailer movie={movie} videoId={videoId} isLargeRow={isLargeRow} />
+                        //         </CardMedia>
+                        //     </CardActionArea>
+                        // </Card>
+
 
                         // <React.Fragment>
                             
