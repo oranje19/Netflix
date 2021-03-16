@@ -33,9 +33,9 @@ function App() {
           <Route exact path="/">
             <HomeScreen />
           </Route>
-          <Route path="/movie/:id" component={MovieDetail}>
+          {/* <Route path="/movie/:id" component={MovieDetail}>
             <MovieDetail />
-          </Route>
+          </Route> */}
         </Switch>
       </Router>
     </div>
