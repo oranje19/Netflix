@@ -60,35 +60,35 @@ function Row({ title, fetchUrl, mediaType, isLargeRow = false }) {
 
     const [movies, setMovies] = useState([]);
     // const [trailerUrl, setTrailerUrl] = useState("")
-    const [movieType, setMovieType] = useState([])
-    const [videoId, setVideoId] = useState([]);
-    const [movieId, setMovieId] = useState('');
-    const [playing, setPlaying] = useState(false);
+    // const [movieType, setMovieType] = useState([])
+    // const [videoId, setVideoId] = useState([]);
+    // const [movieId, setMovieId] = useState('');
+    // const [playing, setPlaying] = useState(false);
 
-    const base_url = "https://image.tmdb.org/t/p/original/";
+    // const base_url = "https://image.tmdb.org/t/p/original/";
 
 
-    const getMovieInfo = async (movieInfo) => {
-        axios.get(fetchMovie(movieInfo)).then((response) => {
-            let videos = response.data.videos.results;
-            let vidId = videos[0].key;
-            console.log("IM INSIDE MOVIE", videos)
-            console.log(vidId)
-            setVideoId(vidId);
-        }).catch((err) => console.log(err));
-    }
+    // const getMovieInfo = async (movieInfo) => {
+    //     axios.get(fetchMovie(movieInfo)).then((response) => {
+    //         let videos = response.data.videos.results;
+    //         let vidId = videos[0].key;
+    //         console.log("IM INSIDE MOVIE", videos)
+    //         console.log(vidId)
+    //         setVideoId(vidId);
+    //     }).catch((err) => console.log(err));
+    // }
 
-    const getTvInfo = async (tvInfo) => {
-        axios.get(fetchTv(tvInfo)).then((response) => {
-            console.log(response)
-            let videos = response.data.videos.results;
-            let vidId = videos[0].key;
-            console.log("IM INSIDE TV", videos)
-            console.log(vidId)
-            setVideoId(vidId)
+    // const getTvInfo = async (tvInfo) => {
+    //     axios.get(fetchTv(tvInfo)).then((response) => {
+    //         console.log(response)
+    //         let videos = response.data.videos.results;
+    //         let vidId = videos[0].key;
+    //         console.log("IM INSIDE TV", videos)
+    //         console.log(vidId)
+    //         setVideoId(vidId)
 
-        }).catch((err) => console.log(err))
-    }
+    //     }).catch((err) => console.log(err))
+    // }
 
 
     useEffect(() => {

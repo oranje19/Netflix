@@ -35,7 +35,7 @@ function HomeScreen() {
                 title='NETFLIX ORIGINALS'
                 fetchUrl={requests.fetchNetflixOriginals}
                 isLargeRow
-                mediaType='movie'
+                mediaType='tv'
             />
 
             <Row title="Trending Now" mediaType='all' fetchUrl={requests.fetchTrending} />
