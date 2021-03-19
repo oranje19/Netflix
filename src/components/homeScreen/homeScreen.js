@@ -5,6 +5,7 @@ import NavBar from '../navBar/navBar';
 import Row from '../row/row';
 import './homeScreen.css';
 import axios from '../../axios';
+import Footer from '../footer/footer';
 
 function HomeScreen() {
     // const [videoId, setVideoId] = useState([]);
@@ -45,6 +46,8 @@ function HomeScreen() {
             <Row title="Horror Movies" mediaType='movie' fetchUrl={requests.fetchHorrorMovies} />
             <Row title="Romance Movies" mediaType='movie' fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" mediaType='movie' fetchUrl={requests.fetchDocumentaries} />
+
+            {/* <Footer /> */}
         </div>
     )
 }

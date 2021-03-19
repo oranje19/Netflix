@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import LoginScreen from './components/login/loginScreen';
 import MovieDetail from './components/detail/movieDetail';
+import Footer from './components/footer/footer';
 
 function App() {
   const user = null;
@@ -38,6 +39,7 @@ function App() {
           </Route> */}
         </Switch>
       </Router>
+      <Footer />
     </div>
   );
 }

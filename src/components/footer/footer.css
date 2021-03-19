@@ -1,0 +1,16 @@
+.footer__linkedin {
+    transform: scale(1.8);
+    color: #0e76a8;
+    margin-right: 8px;
+}
+
+.footer__github {
+    transform: scale(1.5);
+    color: grey;
+    margin-right: 8px;
+}
+
+.footer__portfolio {
+    transform: scale(1.8);
+    color: grey;
+}
