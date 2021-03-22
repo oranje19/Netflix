@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        {/* {!user ? (
+        {!user ? (
           <LoginScreen />
         ) : (
           <Switch>
@@ -24,20 +24,12 @@ function App() {
               <HomeScreen />
             </Route>
           </Switch>
-        )} */}
+        )}
         {/* <Switch>
           <Route exact path="/">
             <HomeScreen />
           </Route>
         </Switch> */}
-        <Switch>
-          <Route exact path="/">
-            <HomeScreen />
-          </Route>
-          {/* <Route path="/movie/:id" component={MovieDetail}>
-            <MovieDetail />
-          </Route> */}
-        </Switch>
       </Router>
       <Footer />
     </div>

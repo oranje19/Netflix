@@ -47,7 +47,6 @@ function HomeScreen() {
             <Row title="Romance Movies" mediaType='movie' fetchUrl={requests.fetchRomanceMovies} />
             <Row title="Documentaries" mediaType='movie' fetchUrl={requests.fetchDocumentaries} />
 
-            {/* <Footer /> */}
         </div>
     )
 }
