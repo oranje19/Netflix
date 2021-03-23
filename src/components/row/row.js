@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
         }
     }
 
-    
 }))
 
 function Row({ title, fetchUrl, mediaType, isLargeRow = false }) {
@@ -56,8 +55,6 @@ function Row({ title, fetchUrl, mediaType, isLargeRow = false }) {
             console.log("this is the data asli", request.data)
             console.log("this is the results", request.data.results)
             setMovies(request.data.results);
-            
-
 
             return request;
         }

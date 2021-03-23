@@ -11,6 +11,7 @@ import Footer from './components/footer/footer';
 import { auth } from './firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
+import ProfileScreen from './components/profile/profileScreen';
 
 function App() {
   const user = useSelector(selectUser);
@@ -26,12 +27,12 @@ function App() {
         }))
       } else {
         // Logged out
-        dispatch(logout);
+        dispatch(logout());
       }
     });
 
     return unsubscribe;
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="app">
@@ -40,7 +41,7 @@ function App() {
           <LoginScreen />
         ) : (
           <Switch>
-            <Route path='profile'>
+            <Route path='/profile'>
               <ProfileScreen />
             </Route>
             <Route exact path="/">
