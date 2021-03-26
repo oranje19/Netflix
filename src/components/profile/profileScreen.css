@@ -59,6 +59,45 @@
     padding-bottom: 10px;
 }
 
-.profileScreen__info > img {
+.profileScreen__avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileScreen__avatar > img {
     height: 100px;
+}
+
+.profileScreen__avatar > span{
+    margin-top: 50px;
+}
+
+.helpIcon {
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip {
+    display: none;
+    width: 250px;
+    height: 310px;
+    position: absolute;
+    background: gray;
+    color: #000;
+    right: 0;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.5s ease;
+    padding: 3px;
+    border: 1px solid black;
+}
+
+/* .tooltip:hover {
+    opacity: 1;
+    transition: all 0.5s ease;
+} */
+
+.helpIcon:hover .tooltip {
+    display: block;
 }
